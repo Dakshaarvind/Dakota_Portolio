@@ -168,6 +168,91 @@
         }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(.4,0,.2,1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .hero-profile-img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .hero-profile-img img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            animation: profileFloat 3.5s ease-in-out infinite alternate;
+        }
+        @keyframes profileFloat {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-10px);}
+        }
+        #featured-work .section-title {
+            margin-bottom: 2.5rem;
+        }
+        .featured-work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .work-card-animated {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.10);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s;
+            position: relative;
+            overflow: hidden;
+        }
+        .work-card-animated:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 48px rgba(102,126,234,0.18);
+        }
+        .work-card-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            animation: iconPop 1.2s;
+        }
+        @keyframes iconPop {
+            0% { transform: scale(0.7);}
+            80% { transform: scale(1.15);}
+            100% { transform: scale(1);}
+        }
+        .work-card-animated h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
+            color: #764ba2;
+        }
+        .work-card-animated ul {
+            list-style: none;
+            padding: 0;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .work-card-animated ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+        .work-card-animated ul li:before {
+            content: "•";
+            color: #667eea;
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+            top: 0;
+        }
+        @media (max-width: 900px) {
+            .featured-work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -193,6 +278,10 @@
             <div class="circle circle4"></div>
         </div>
         <div class="hero-content">
+            <div class="hero-profile-img">
+                <!-- Replace src with your own image if available -->
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dakota Smith" />
+            </div>
             <h1>Hi, I'm Dakota</h1>
             <p>Business Marketing • Business Intelligence • Analytics • Creative Strategy</p>
             <a href="#about" class="cta-button">Learn More</a>
@@ -242,6 +331,83 @@
                 <h3>Creative Direction</h3>
                 <p>Leading creative projects from concept to execution with a focus on results.</p>
             </div>
+        </div>
+    </section>
+    <section class="section" id="featured-work">
+        <h2 class="section-title">Featured Work & Campaigns</h2>
+        <div class="featured-work-grid fade-in">
+            <!-- Digital Marketing Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-brands fa-instagram"></i></div>
+                <h3>Digital Marketing</h3>
+                <ul>
+                    <li>Instagram campaigns, posters, and targeted ads</li>
+                    <li>Content creation & analytics</li>
+                    <li>Brand engagement growth</li>
+                </ul>
+            </div>
+            <!-- Suicide Prevention Event Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-solid fa-ribbon"></i></div>
+                <h3>Suicide Prevention Advocacy</h3>
+                <ul>
+                    <li>Organized awareness events</li>
+                    <li>Collaborated with local organizations</li>
+                    <li>Social media outreach & support resources</li>
+                </ul>
+            </div>
+            <!-- AAPI Month Awareness Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-solid fa-people-group"></i></div>
+                <h3>AAPI Month Awareness</h3>
+                <ul>
+                    <li>Led campus-wide campaigns</li>
+                    <li>Designed educational posters & digital content</li>
+                    <li>Hosted cultural events</li>
+                </ul>
+            </div>
+            <!-- Oscar Nomination Competition Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-solid fa-film"></i></div>
+                <h3>Oscar Nomination Competition</h3>
+                <ul>
+                    <li>Hosted for film club</li>
+                    <li>Managed event logistics & promotion</li>
+                    <li>Engaged student filmmakers</li>
+                </ul>
+            </div>
+            <!-- Kindness Grams & Posters Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Physical Marketing</h3>
+                <ul>
+                    <li>Kindness grams & creative posters</li>
+                    <li>Strategic placement on boards, streets, and poles</li>
+                    <li>Community engagement</li>
+                </ul>
+            </div>
+            <!-- Strategic Marketing Card -->
+            <div class="work-card-animated">
+                <div class="work-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Strategic Marketing</h3>
+                <ul>
+                    <li>Documented promotional activities & fundraisers</li>
+                    <li>Scheduled social media posts, TikToks, fancams</li>
+                    <li>Featured each dancer & performance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="about-content fade-in">
+            <strong>California State University Long Beach | College of Business</strong> <br>
+            <span>May 2027 &mdash; Long Beach, CA</span><br>
+            <em>Bachelor of Business Administration, Concentration: Marketing</em><br>
+            GPA: 3.5/4.0<br>
+            Dean’s List<br>
+            Middle Class Scholarship Recipient<br>
+            American Indian Chamber of Commerce Scholarship Recipient
         </div>
     </section>
     <section class="section" id="projects">
@@ -309,20 +475,70 @@
         <h2 class="section-title">Work Experience</h2>
         <div class="work-grid fade-in">
             <div class="work-card">
-                <div class="work-role">Business Intelligence Analyst</div>
-                <div class="work-company">Acme Corp</div>
-                <div class="work-description">Transformed raw data into actionable insights, supporting strategic decisions across marketing and sales teams.</div>
+                <div class="work-role">Summer Intern</div>
+                <div class="work-company">Galileo Learning, Pasadena, CA <span style="float:right;">May 2024 – Aug 2024</span></div>
+                <div class="work-description">
+                    ● Ensured efficient camp operations for 200+ campers daily by managing logistics and resolving issues, maintaining a high satisfaction rate in official surveys.<br>
+                    ● Assisted in 15+ activities weekly, enhancing camper engagement and boosting participation considerably.<br>
+                    ● Collaborated with a team of 10+ staff, improving communication and operational coordination, leading to a reduction in downtime during transitions throughout the camp schedule.
+                </div>
             </div>
             <div class="work-card">
-                <div class="work-role">Marketing Coordinator</div>
-                <div class="work-company">Bright Ideas Agency</div>
-                <div class="work-description">Managed digital campaigns, content creation, and analytics reporting for multiple clients.</div>
+                <div class="work-role">Marketing Intern</div>
+                <div class="work-company">GAPA Inc., Monterey Park, CA <span style="float:right;">May 2024 – Aug 2024</span></div>
+                <div class="work-description">
+                    ● Increased website traffic and conversion rates through multichannel campaigns, including segmented email marketing and paid social media ads.<br>
+                    ● Enhanced social media engagement by 47% and follower growth by 26% by optimizing content strategy and implementing A/B testing for high-performing posts resulting in the development of 2 new product features and a 15% increase in customer acquisition.<br>
+                    ● Developed weekly performance dashboards using Google Analytics, optimizing acquisition funnels and reducing CPA by 10% through data-driven adjustments.
+                </div>
             </div>
             <div class="work-card">
-                <div class="work-role">Creative Strategist</div>
-                <div class="work-company">Freelance</div>
-                <div class="work-description">Developed creative solutions for startups, focusing on branding, messaging, and audience engagement.</div>
+                <div class="work-role">Marketing Intern</div>
+                <div class="work-company">Stomping Ground L.A., Los Angeles, CA <span style="float:right;">Aug 2022 – Dec 2022</span></div>
+                <div class="work-description">
+                    ● Boosted social media engagement through youth-focused content strategies and leveraging emerging trends and influencer collaborations.<br>
+                    ● Increased foot traffic to community dance events by 20% through localized marketing campaigns, including flier distribution and neighborhood outreach.<br>
+                    ● Supported weekly dance workshops, enhancing participation through targeted promotions and post-event surveys that improved satisfaction rates by 25%.
+                </div>
             </div>
+        </div>
+    </section>
+    <section class="section" id="activities">
+        <h2 class="section-title">Activities</h2>
+        <div class="work-grid fade-in">
+            <div class="work-card">
+                <div class="work-role">Experience Guide</div>
+                <div class="work-company">The NOW Massage, Long Beach, CA <span style="float:right;">Dec 2024 – Present</span></div>
+                <div class="work-description">
+                    ● Delivered exceptional front desk service by managing client check-ins, scheduling appointments, and ensuring a welcoming, seamless experience.<br>
+                    ● Promoted memberships and retail products through personalized recommendations, consistently meeting sales goals.<br>
+                    ● Supported daily operations by maintaining a clean, organized workspace and collaborating effectively with team members to ensure client satisfaction.
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-role">Publicity Officer</div>
+                <div class="work-company">Girl Up Organization, San Marino, CA <span style="float:right;">Aug 2019 – May 2022</span></div>
+                <div class="work-description">
+                    ● Developed sewing skills and creativity by producing handmade scrunchies for local shelters, such as the Elizabeth House, contributing to their fundraising efforts.<br>
+                    ● Showcased strong writing skills by crafting personalized messages to provide emotional support and encouragement for women in local shelters.<br>
+                    ● Created targeted social media campaigns to effectively promote club meetings, community service initiatives, and local organizations by utilizing visually appealing graphics to increase visibility.
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-role">Volunteer</div>
+                <div class="work-company">Crowell Public Library, San Marino, CA <span style="float:right;">May 2019 – Aug 2019</span></div>
+                <div class="work-description">
+                    ● Displayed summer reading packages to spark a love of reading among children, tailoring selections to individual interests and reading levels.<br>
+                    ● Gave comprehensive explanations of the summer reading program to parents and adults in order to ensure their understanding and support of their children’s participation.<br>
+                    ● Contributed 22 hours of service, significantly impacting the library’s mission of promoting literacy and education for children.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="skills-list">
+        <h2 class="section-title">Skills</h2>
+        <div class="about-content fade-in">
+            Microsoft Suite, Google Suite, Google Analytics, HubSpot Content Marketing, Meta Social Media Marketing, Zenoti, Spanish
         </div>
     </section>
     <section class="section" id="contact">
