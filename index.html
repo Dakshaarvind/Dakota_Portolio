@@ -9,7 +9,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #fff;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
@@ -253,6 +253,73 @@
                 grid-template-columns: 1fr;
             }
         }
+        .section, .glass-section {
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+.glass-card {
+    background: rgba(255,255,255,0.10);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(102,126,234,0.10);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+.work-card, .project-card, .work-card-animated {
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+.work-company, .work-role {
+    color: #fff;
+}
+.work-year {
+    float: right;
+    color: #b3b3ff;
+    font-weight: 500;
+    font-size: 1em;
+    margin-left: 10px;
+}
+.skills-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+}
+.skill-bubble {
+    background: linear-gradient(135deg, #667eea 60%, #764ba2 100%);
+    color: #fff;
+    border-radius: 30px;
+    padding: 0.7em 1.5em;
+    font-size: 1.1em;
+    font-weight: 500;
+    box-shadow: 0 4px 18px rgba(102,126,234,0.10);
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1.5px solid rgba(255,255,255,0.18);
+}
+.skill-bubble:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+    background: linear-gradient(135deg, #764ba2 60%, #667eea 100%);
+}
+.section-title {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(102,126,234,0.18);
+}
+.about-content {
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .featured-work-grid, .skills-showcase {
+        grid-template-columns: 1fr !important;
+        flex-direction: column;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -264,6 +331,7 @@
                 <li><a href="#work">Work Experience</a></li>
                 <li><a href="#featured-work">Featured Work</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#activities">Activities</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -278,7 +346,6 @@
         </div>
         <div class="hero-content">
             <div class="hero-profile-img">
-                <!-- Replace src with your own image if available -->
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dakota Smith" />
             </div>
             <h1>Hi, I'm Dakota</h1>
@@ -286,36 +353,44 @@
             <a href="#work" class="cta-button" style="margin-top:1.5rem;">View My Experience</a>
         </div>
     </section>
-    <section class="section" id="work">
+    <section class="section glass-section" id="work">
+        <div class="floating-circles">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+        </div>
         <h2 class="section-title">Work Experience</h2>
         <div class="work-grid fade-in">
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Summer Intern</div>
-                <div class="work-company">Galileo Learning, Pasadena, CA <span style="float:right;">May 2024 – Aug 2024</span></div>
+                <div class="work-company">Galileo Learning, Pasadena, CA <span class="work-year">2024</span></div>
                 <div class="work-description">
                     Managed logistics and daily operations for over 200 campers, ensuring smooth transitions and high satisfaction. Enhanced camper engagement by supporting a wide range of activities and collaborated closely with a team to improve communication and reduce downtime.
                 </div>
             </div>
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Marketing Intern</div>
-                <div class="work-company">GAPA Inc., Monterey Park, CA <span style="float:right;">May 2024 – Aug 2024</span></div>
+                <div class="work-company">GAPA Inc., Monterey Park, CA <span class="work-year">2024</span></div>
                 <div class="work-description">
                     Drove website traffic and conversions through multichannel campaigns, including email and paid social. Improved social media engagement and follower growth by optimizing content and A/B testing, and developed analytics dashboards to refine marketing strategies and reduce acquisition costs.
                 </div>
             </div>
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Marketing Intern</div>
-                <div class="work-company">Stomping Ground L.A., Los Angeles, CA <span style="float:right;">Aug 2022 – Dec 2022</span></div>
+                <div class="work-company">Stomping Ground L.A., Los Angeles, CA <span class="work-year">2022</span></div>
                 <div class="work-description">
                     Boosted engagement for youth-focused dance events through creative social media and influencer collaborations. Increased event attendance with targeted local marketing and supported workshops by promoting participation and gathering feedback to improve satisfaction.
                 </div>
             </div>
         </div>
     </section>
-    <section class="section" id="featured-work">
+    <section class="section glass-section" id="featured-work">
+        <div class="floating-circles">
+            <div class="circle circle3"></div>
+            <div class="circle circle4"></div>
+        </div>
         <h2 class="section-title">Featured Work & Campaigns</h2>
         <div class="featured-work-grid fade-in">
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-brands fa-instagram"></i></div>
                 <h3>Digital Marketing</h3>
                 <ul>
@@ -324,7 +399,7 @@
                     <li>Brand engagement growth</li>
                 </ul>
             </div>
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-solid fa-ribbon"></i></div>
                 <h3>Suicide Prevention Advocacy</h3>
                 <ul>
@@ -333,7 +408,7 @@
                     <li>Social media outreach & support resources</li>
                 </ul>
             </div>
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-solid fa-people-group"></i></div>
                 <h3>AAPI Month Awareness</h3>
                 <ul>
@@ -342,7 +417,7 @@
                     <li>Hosted cultural events</li>
                 </ul>
             </div>
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-solid fa-film"></i></div>
                 <h3>Oscar Nomination Competition</h3>
                 <ul>
@@ -351,7 +426,7 @@
                     <li>Engaged student filmmakers</li>
                 </ul>
             </div>
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-solid fa-heart"></i></div>
                 <h3>Physical Marketing</h3>
                 <ul>
@@ -360,7 +435,7 @@
                     <li>Community engagement</li>
                 </ul>
             </div>
-            <div class="work-card-animated">
+            <div class="work-card-animated glass-card">
                 <div class="work-card-icon"><i class="fa-solid fa-bullseye"></i></div>
                 <h3>Strategic Marketing</h3>
                 <ul>
@@ -371,10 +446,14 @@
             </div>
         </div>
     </section>
-    <section class="section" id="projects">
+    <section class="section glass-section" id="projects">
+        <div class="floating-circles">
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid fade-in">
-            <div class="project-card">
+            <div class="project-card glass-card">
                 <div class="project-image"><i class="fa-solid fa-database"></i></div>
                 <div class="project-content">
                     <div class="project-title">Market Insights Dashboard</div>
@@ -386,7 +465,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card glass-card">
                 <div class="project-image"><i class="fa-solid fa-bullseye"></i></div>
                 <div class="project-content">
                     <div class="project-title">Brand Awareness Campaign</div>
@@ -398,7 +477,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card glass-card">
                 <div class="project-image"><i class="fa-solid fa-lightbulb"></i></div>
                 <div class="project-content">
                     <div class="project-title">Creative Content Series</div>
@@ -412,39 +491,57 @@
             </div>
         </div>
     </section>
-    <section class="section" id="skills">
+    <section class="section glass-section" id="skills">
+        <div class="floating-circles">
+            <div class="circle circle1"></div>
+            <div class="circle circle4"></div>
+        </div>
         <h2 class="section-title">Skills</h2>
-        <div class="about-content fade-in">
-            Microsoft Suite, Google Suite, Google Analytics, HubSpot Content Marketing, Meta Social Media Marketing, Zenoti, Spanish
+        <div class="skills-showcase fade-in">
+            <div class="skill-bubble"><i class="fa-brands fa-microsoft"></i> Microsoft Suite</div>
+            <div class="skill-bubble"><i class="fa-brands fa-google"></i> Google Suite</div>
+            <div class="skill-bubble"><i class="fa-solid fa-chart-line"></i> Google Analytics</div>
+            <div class="skill-bubble"><i class="fa-brands fa-hubspot"></i> HubSpot Content Marketing</div>
+            <div class="skill-bubble"><i class="fa-brands fa-facebook"></i> Meta Social Media Marketing</div>
+            <div class="skill-bubble"><i class="fa-solid fa-laptop"></i> Zenoti</div>
+            <div class="skill-bubble"><i class="fa-solid fa-language"></i> Spanish</div>
         </div>
     </section>
-    <section class="section" id="activities">
+    <section class="section glass-section" id="activities">
+        <div class="floating-circles">
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
         <h2 class="section-title">Activities</h2>
         <div class="work-grid fade-in">
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Experience Guide</div>
-                <div class="work-company">The NOW Massage, Long Beach, CA <span style="float:right;">Dec 2024 – Present</span></div>
+                <div class="work-company">The NOW Massage, Long Beach, CA <span class="work-year">2024–Present</span></div>
                 <div class="work-description">
                     Provided exceptional front desk service, managed appointments, and promoted memberships and retail products. Maintained a welcoming environment and collaborated with the team to ensure client satisfaction.
                 </div>
             </div>
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Publicity Officer</div>
-                <div class="work-company">Girl Up Organization, San Marino, CA <span style="float:right;">Aug 2019 – May 2022</span></div>
+                <div class="work-company">Girl Up Organization, San Marino, CA <span class="work-year">2019–2022</span></div>
                 <div class="work-description">
                     Produced handmade scrunchies for local shelters, crafted personalized messages for women in need, and created social media campaigns to promote club activities and community service.
                 </div>
             </div>
-            <div class="work-card">
+            <div class="work-card glass-card">
                 <div class="work-role">Volunteer</div>
-                <div class="work-company">Crowell Public Library, San Marino, CA <span style="float:right;">May 2019 – Aug 2019</span></div>
+                <div class="work-company">Crowell Public Library, San Marino, CA <span class="work-year">2019</span></div>
                 <div class="work-description">
                     Supported the summer reading program by curating packages for children, explaining program details to parents, and contributing to the library’s mission of promoting literacy.
                 </div>
             </div>
         </div>
     </section>
-    <section class="section" id="contact">
+    <section class="section glass-section" id="contact">
+        <div class="floating-circles">
+            <div class="circle circle1"></div>
+            <div class="circle circle4"></div>
+        </div>
         <h2 class="section-title">Contact</h2>
         <div class="contact-content fade-in">
             <p>Let's connect! Reach out for collaborations, speaking engagements, or just to say hi.</p>
